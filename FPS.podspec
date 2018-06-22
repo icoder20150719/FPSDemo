@@ -8,7 +8,7 @@
 
  Pod::Spec.new do |s|
   s.name         = "FPS"
-  s.version      = "1.0.0"
+  s.version      = "1.0.1"
   s.summary      = "一个iOSapp内存、cpu，fps检测工具"
   s.description  = "一个iOSapp内存、cpu，fps检测工具 使用oc编写"
   s.homepage     = "https://github.com/icoder20150719/FPSDemo"
@@ -16,7 +16,7 @@
   s.license= { :type => "MIT", :file => "LICENSE" }
   s.author       = { "xiongan" => "andybbear@163.com" }
   s.source       = { :git => "https://github.com/icoder20150719/FPSDemo.git", :tag => s.version }
-  s.source_files = "FPSDemo/src/*.{h,m}"
+  s.source_files = "FPSDemo/FPSDemo/src/*.{h,m}"
   s.ios.deployment_target = '7.0'
   s.frameworks   = 'UIKit'
   s.requires_arc = true
