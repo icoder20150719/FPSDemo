@@ -8,7 +8,10 @@
 </p>
 
 ## 二、使用方法
-
+```
+ pod "ICFPS"
+ 
+ ```
 ```
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 

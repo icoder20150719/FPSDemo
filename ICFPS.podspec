@@ -7,7 +7,7 @@
 #
 
  Pod::Spec.new do |s|
-  s.name         = "FPS"
+  s.name         = "ICFPS"
   s.version      = "1.0.1"
   s.summary      = "一个iOSapp内存、cpu，fps检测工具"
   s.description  = "一个iOSapp内存、cpu，fps检测工具 使用oc编写"
