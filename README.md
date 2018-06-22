@@ -6,7 +6,6 @@
 <p align="center" >
 <img src="Video/1529650813572968.gif" alt="FPSDemo" title="FPSDemo">
 </p>
-![Image text](Video/1529650813572968.gif)
 
 ## 二、使用方法
 
