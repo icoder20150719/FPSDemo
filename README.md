@@ -13,13 +13,10 @@
  
  ```
 ```
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-
+- (void)applicationDidBecomeActive:(UIApplication *)application {
 #ifdef DEBUG
-    [ICMemoryWave show];
+[ICMemoryWave show];
 #endif
-
-return YES;
 }
 ```
 ## 三、感谢
