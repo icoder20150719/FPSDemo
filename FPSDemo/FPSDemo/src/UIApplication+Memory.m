@@ -19,7 +19,6 @@
     if (kernReturn != KERN_SUCCESS ) {
         return NSNotFound;
     }
-//    NSLog(@"常驻内存大小：%ld 虚拟内存大小:%ld",taskInfo.resident_size /1024 /1024,taskInfo.virtual_size / 1024 / 1024);
     return taskInfo.resident_size /1024 / 1024;
 }
 - (double)availableMemory {
@@ -33,7 +32,6 @@
         return NSNotFound;
     }
     double free_count = ((vm_page_size *vmStats.free_count) /1024.0) / 1024.0;
-//    NSLog(@"还剩下多少：%f 已使用 %lu",free_count,vmStats.active_count * vm_page_size/1024/1024);
     return free_count;
 }
 - (double)cpuUsed {
@@ -45,21 +43,16 @@
         if (kr != KERN_SUCCESS) {
             return 0;
         }
-        task_basic_info_t      basic_info;
         thread_array_t         thread_list;
         mach_msg_type_number_t thread_count;
         thread_info_data_t     thinfo;
         mach_msg_type_number_t thread_info_count;
         thread_basic_info_t basic_info_th;
-        uint32_t stat_thread = 0; // Mach threads
-        basic_info = (task_basic_info_t)tinfo;
         // get threads in the task
         kr = task_threads(mach_task_self(), &thread_list, &thread_count);
         if (kr != KERN_SUCCESS) {
             return 0;
         }
-        if (thread_count > 0)
-            stat_thread += thread_count;
         long tot_sec = 0;
         long tot_usec = 0;
         float tot_cpu = 0;
@@ -81,7 +74,6 @@
         } // for each thread
         kr = vm_deallocate(mach_task_self(), (vm_offset_t)thread_list, thread_count * sizeof(thread_t));
         assert(kr == KERN_SUCCESS);
-        NSLog(@"CPU Usage: %f \n", tot_cpu);
     return tot_cpu;
 }
 @end

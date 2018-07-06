@@ -17,7 +17,10 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-
+    
+#ifdef DEBUG
+    [ICMemoryWave show];
+#endif
     return YES;
 }
 
@@ -40,10 +43,7 @@
 
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
-    
-#ifdef DEBUG
-    [ICMemoryWave show];
-#endif
+
     
 }
 

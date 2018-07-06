@@ -41,7 +41,7 @@
 }
 -(void)setProgress:(CGFloat)progress {
     _progress = progress;
-    _progressLabel.text = [NSString stringWithFormat:@"%ld%%",[[NSNumber numberWithFloat:progress * 100] integerValue]];
+    _progressLabel.text = [NSString stringWithFormat:@"%ld%%",(long)[[NSNumber numberWithFloat:progress * 100] integerValue]];
     _progressLabel.textColor=[UIColor colorWithWhite:progress*1.8 alpha:1];
     self.yHeight = self.bounds.size.height * (1 - progress);
     self.firstWaveLayer.fillColor = self.firstWaveColor.CGColor;
@@ -76,6 +76,7 @@
     [bezierFristWave addLineToPoint:CGPointMake(0, startOffY)];
     [bezierFristWave closePath];
     CABasicAnimation *anim = [CABasicAnimation animationWithKeyPath:@"transform.translation.x"];
+    anim.removedOnCompletion = NO;
     anim.duration = 3;
     anim.fromValue = @(0);
     anim.toValue =@(-self.frame.size.width);
